@@ -10,13 +10,8 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/telegrams', methods = ['POST', 'GET'])
+@app.route('/telegrams')
 def telegrams():
-#    if request.method == 'POST':
-#        link = request.form['link']
-#        word = request.form['word']
-#        plott(getsearcher(link, word))
-#        #fin_form = link+'\n'+word
     return render_template('telegrams.html')
 
 @app.route('/longread', methods = ['POST', 'GET'])
@@ -27,6 +22,16 @@ def longread():
 #        plott(getsearcher(link, word))
 #        #fin_form = link+'\n'+word
     return render_template('longread.html')
+
+@app.route('/add', methods = ['POST', 'GET'])
+def add():
+#    if request.method == 'POST':
+#        link = request.form['link']
+#        word = request.form['word']
+#        plott(getsearcher(link, word))
+#        #fin_form = link+'\n'+word
+    return render_template('add.html')
+
 
 if __name__ == '__main__':
     import os
