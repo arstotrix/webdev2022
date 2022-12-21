@@ -4,10 +4,44 @@ nav {
     position: fixed;
 }
 
+/*.carousel-item {
+    width: 50%;
+    height: 50%;
+    align: center;
+    background-color: #586BB7;
+}*/
 .navbar-brand {
     color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .nav-link {
     color:white;
+}
+
+.jumbotron {
+    background-color: white;
+    background: url('images/new2.png');
+    opacity: 1;
+    text-align: center;
+    /*text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;*/
+    color: black; 
+}
+
+.display-4 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.lead {
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#btn1 {
+    margin-right: 20px;
+}
+
+#btn2 {
+    margin-right: 20px;
 }
