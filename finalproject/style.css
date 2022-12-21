@@ -1,0 +1,13 @@
+nav {
+    background-color: #586bb7;
+    color: white;
+    position: fixed;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.nav-link {
+    color:white;
+}
