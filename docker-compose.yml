@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  telegram-app:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    restart: always
+    container_name: telegram-app
+    ports:
+      - 5000:5000
+    volumes:
+      - ./src:/deploy/app
