@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, Request, request, redirect, Response
 
 app = Flask(__name__)
 
@@ -25,9 +25,9 @@ def thankyou():
 
 @app.route('/add', methods = ['POST', 'GET'])
 def add():
-#    if request.method == 'POST':
-#        name = request.form['link']
-#        mail = request.form['word']
-#        plott(getsearcher(link, word))
-#        #fin_form = link+'\n'+word
-    return render_template('add.html')
+    if request.method == "POST":
+        form = request.form.to_dict()
+        print(f"form data: {form}")
+        return redirect("/thank-you")
+    else:
+        return render_template('add.html')
