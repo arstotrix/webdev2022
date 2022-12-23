@@ -1,16 +1,100 @@
- {% extends "base.html" %}
+﻿ {% extends "base.html" %}
  {% block body %}
- <div class="form-container">
-        <p>Вы можете отправить нам телеграмму с помощью нашей <a href='https://forms.gle/WcSFqj37Q8tfewy37'>гугл-формы</a>. <br>Также, если вы хотите, вы можете стать нашим волонтёром, отправив нам ваши данные с помощью формы ниже.</p>
-        <form action="/">
-          <fieldset>
-            <legend>Стать волонтёром</legend>
-            <label for="name">Ваше имя и фамилия</label><br>
-            <input type="text" id="name" name="fname" value=""><br>
-            <label for="mail">Электронная почта</label><br>
-            <input type="text" id="mail" name="lname" value=""><br><br>
-            <input type="submit" value="Отправить">
-          </fieldset>
+  <div class="container" id="container_1">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="images/postal.jpg" alt="" width="900" height="440">
+      <h2>Поделитесь своей телеграммой</h2>
+      <p class="lead">Мы бережно собираем телеграммы со всех уголков мира, и мы рады каждому новому экземпляру в нашей коллекции. В этой форме вы можете поделиться телеграммой из своего семейного архива.</p>
+    </div>
+
+    <form>
+    <div class="mb-3">
+        <label for="username">Представьтесь, пожалуйста *</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="username" placeholder="Имя, фамилия (по желанию)" required>
+            <div class="invalid-feedback" style="width: 100%;">
+                Это поле обязательно.
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+	
+        	<label for="picture-link">Ссылка на изображение *</label>
+        	<input type="link" class="form-control" id="picture-link" placeholder="Загрузите фото или скан телеграммы на Google / Яндекс Диск и поделитесь доступом" required>
+        	<div class="invalid-feedback">
+            		Введите корректную ссылку.
+        	
+	</div>
+    </div>
+	<label for="volunteer">Хотите ли вы помочь нам с расшифровкой своей телеграммы? *</label>
+	<div class="form-check">
+  		<input class="form-check-input" type="radio" name="Volunteer" id="Yes">
+  		<label class="form-check-label" for="Yes">
+    		Да
+  		</label>
+	</div>
+	<div class="form-check">
+  	  <input class="form-check-input" type="radio" name="Volunteer" id="No">
+  	  <label class="form-check-label" for="No">
+    	  Нет
+  	</label>
+    </div>
+    
+   
+    <div class="mb-3">
+	
+        <label for="contact">Как с вами можно связаться? * </label>
+        <input type="contact" class="form-control" id="contact" placeholder="Телефон, адрес почты или контакт в любом мессенджере" required>
+        <div class="invalid-feedback">
+        Введите, пожалуйста, ваши контакты. Это поможет нам быть на связи.
+        </div>
+  
+    </div>
+
+          
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="privacy-policy">
+            <label class="custom-control-label" for="privacy-policy">Я согласен(-на) на обработку и хранение предоставленных мной данных</label>
+          </div>
+          <hr class="mb-4">
+
+        
+          
+          <button class="btn btn-primary btn-lg btn-block" type="submit" style ="width: 100%; height: 5%; margin-right: auto; margin-left: auto; margin-bottom: 5%;">Отправить</button>
         </form>
- </div>
+	
+      </div>
+    </div>
  {% endblock %}
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/vendor/holder.min.js"></script>
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
