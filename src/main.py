@@ -15,6 +15,12 @@ def telegrams():
 def longread():
     return render_template('longread.html')
 
+
+@app.route('/thank-you', methods=['GET'])
+def thankyou():
+    return render_template('thankyou.html')
+
+
 @app.route('/add', methods = ['POST', 'GET'])
 def add():
 #    if request.method == 'POST':
