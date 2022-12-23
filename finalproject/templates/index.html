@@ -10,9 +10,9 @@
       Чтобы достоверно фиксировать все параметры телеграмм, мы придумали такую разметку, которая максимально учитывает
       всю информацию, которая содержится в телеграмме.</p>
     <hr class="my-4">
-    <a class="btn btn-primary btn-lg" id="btn1" href="#" role="button">Посмотреть датасет</a>
-    <a class="btn btn-primary btn-lg" id="btn2" href="#" role="button">Посмотреть исследование</a>
-    <a class="btn btn-primary btn-lg" id="btn3" href="#" role="button">Посмотреть телеграммы</a>
+    <a class="btn btn-primary btn-lg" id="btn1" href="{{ url_for('telegrams') }}" role="button">Посмотреть телеграммы</a>
+    <a class="btn btn-primary btn-lg" id="btn2" href="{{ url_for('longread') }}" role="button">Посмотреть исследование</a>
+    <a class="btn btn-primary btn-lg" id="btn3" href="{{ url_for('add') }}" role="button">Добавить телеграммы</a>
   </div>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
