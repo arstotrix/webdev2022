@@ -26,8 +26,8 @@ def thankyou():
 @app.route('/add', methods = ['POST', 'GET'])
 def add():
     if request.method == "POST":
-        form = request.form.to_dict()
-        print(f"form data: {form}")
+        with open("user_data.txt", "a") as file:
+            file.write(str(request.form.to_dict()) + "\n")
         return redirect("/thank-you")
     else:
         return render_template('add.html')
