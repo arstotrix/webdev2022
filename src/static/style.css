@@ -6,9 +6,14 @@
     width: 100%;
 }
 
-body {
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     margin-block-start: 3.5em;
 }
+
+main { flex-grow: 1; }
 
 .header {
     position: fixed;
