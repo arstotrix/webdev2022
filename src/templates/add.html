@@ -7,74 +7,79 @@
 
 {% block body %}
 
-  <div class="container" id="container_1">
-    <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="images/postal.jpg" alt="" width="900" height="440">
-      <h2>Поделитесь своей телеграммой</h2>
-      <p class="lead">Мы бережно собираем телеграммы со всех уголков мира, и мы рады каждому новому экземпляру в нашей коллекции. В этой форме вы можете поделиться телеграммой из своего семейного архива.</p>
-    </div>
+<div class="container" id="container_1">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="images/postal.jpg" alt="" width="900" height="440">
+    <h2>Поделитесь своей телеграммой</h2>
+    <p class="lead">Мы бережно собираем телеграммы со всех уголков мира, и мы рады каждому новому экземпляру в нашей
+      коллекции. В этой форме вы можете поделиться телеграммой из своего семейного архива.</p>
+  </div>
 
 
 
 
-    <div class="mb-3">
-        <label for="username">Представьтесь, пожалуйста *</label>
-        <div class="input-group">
-            <input type="text" class="form-control" id="username" placeholder="Имя, фамилия (по желанию)" required>
-            <div class="invalid-feedback" style="width: 100%;">
-                Это поле обязательно.
-            </div>
-        </div>
-    </div>
-
-    <div class="mb-3">
-
-        	<label for="picture-link">Ссылка на изображение *</label>
-        	<input type="link" class="form-control" id="picture-link" placeholder="Загрузите фото или скан телеграммы на Google / Яндекс Диск и поделитесь доступом" required>
-        	<div class="invalid-feedback">
-            		Введите корректную ссылку.
-
-	</div>
-    </div>
-	<label for="volunteer">Хотите ли вы помочь нам с расшифровкой своей телеграммы? *</label>
-	<div class="form-check">
-  		<input class="form-check-input" type="radio" name="Volunteer" id="Yes">
-  		<label class="form-check-label" for="Yes">
-    		Да
-  		</label>
-	</div>
-	<div class="form-check">
-  	  <input class="form-check-input" type="radio" name="Volunteer" id="No">
-  	  <label class="form-check-label" for="No">
-    	  Нет
-  	</label>
-</div>
-
-
-    <div class="mb-3">
-
-        <label for="contact">Как с вами можно связаться? * </label>
-        <input type="contact" class="form-control" id="contact" placeholder="Телефон, адрес почты или контакт в любом мессенджере" required>
-        <div class="invalid-feedback">
-        Введите, пожалуйста, ваши контакты. Это поможет нам быть на связи.
-        </div>
-
-    </div>
-
-
-          <hr class="mb-4">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="privacy-policy">
-            <label class="custom-control-label" for="privacy-policy">Я согласен(-на) на обработку и хранение предоставленных мной данных</label>
-          </div>
-          <hr class="mb-4">
-
-
-
-          <button class="btn btn-primary btn-lg btn-block" type="submit" style ="width: 20%; height: 5%; margin-right: auto; margin-left: auto; margin-bottom: 5%;">Отправить</button>
-        </form>
-
+  <div class="mb-3">
+    <label for="username">Представьтесь, пожалуйста *</label>
+    <div class="input-group">
+      <input type="text" class="form-control" id="username" placeholder="Имя, фамилия (по желанию)" required>
+      <div class="invalid-feedback" style="width: 100%;">
+        Это поле обязательно.
       </div>
     </div>
+  </div>
+
+  <div class="mb-3">
+
+    <label for="picture-link">Ссылка на изображение *</label>
+    <input type="link" class="form-control" id="picture-link"
+      placeholder="Загрузите фото или скан телеграммы на Google / Яндекс Диск и поделитесь доступом" required>
+    <div class="invalid-feedback">
+      Введите корректную ссылку.
+
+    </div>
+  </div>
+  <label for="volunteer">Хотите ли вы помочь нам с расшифровкой своей телеграммы? *</label>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="Volunteer" id="Yes">
+    <label class="form-check-label" for="Yes">
+      Да
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="Volunteer" id="No">
+    <label class="form-check-label" for="No">
+      Нет
+    </label>
+  </div>
+
+
+  <div class="mb-3">
+
+    <label for="contact">Как с вами можно связаться? * </label>
+    <input type="contact" class="form-control" id="contact"
+      placeholder="Телефон, адрес почты или контакт в любом мессенджере" required>
+    <div class="invalid-feedback">
+      Введите, пожалуйста, ваши контакты. Это поможет нам быть на связи.
+    </div>
+
+  </div>
+
+
+  <hr class="mb-4">
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="privacy-policy">
+    <label class="custom-control-label" for="privacy-policy">Я согласен(-на) на обработку и хранение предоставленных
+      мной данных</label>
+  </div>
+  <hr class="mb-4">
+
+
+
+  <button class="btn btn-primary btn-lg btn-block" type="submit"
+    style="width: 20%; height: 5%; margin-right: auto; margin-left: auto; margin-bottom: 5%;">Отправить</button>
+  </form>
+
+</div>
+</div>
 
 {% endblock %}
