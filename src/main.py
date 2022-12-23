@@ -7,11 +7,13 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+
 @app.route('/telegrams')
 def telegrams():
     return render_template('telegrams.html')
 
-@app.route('/longread', methods = ['POST', 'GET'])
+
+@app.route('/longread', methods=['GET'])
 def longread():
     return render_template('longread.html')
 
