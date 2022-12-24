@@ -1,6 +1,15 @@
-from flask import Flask, render_template, Request, request, redirect, Response
+from flask import Flask, render_template, Request, request, redirect, Response, jsonify
+from flask_pymongo import PyMongo
+
+from config import Config
+
 
 app = Flask(__name__)
+app.config.from_object(Config)
+
+
+mongo = PyMongo(app=app)
+db = mongo.db
 
 
 @app.route('/')
