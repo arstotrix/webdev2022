@@ -24,16 +24,16 @@
         <h3 id="hyp1" style="text-align: center;">Первая гипотеза</h3>
         <br>
         <p>Мы выяснили, что с течением времени круг тем телеграмм сужался по мере развития альтернативных средств коммуникации, как мы и предполагали изначально. Для этого мы применили несколько метрик:</p>
-        <img src= "static/images/longread1.png" style = "width: 600px; height: 340px; float: right;"></img>
+        <img src= "{{ url_for('static', filename='images/longread1.png') }}" style = "width: 600px; height: 340px; float: right;"></img>
         <br><br><br><br><br>
         <p style="vertical-align: middle;">Для начала мы просто измерили количество различных тем, которые обсуждались в 
         телеграммах каждого отдельного десятилетия...</p>
-        <img src= "static/images/longread2.png" style = "width: 600px; height: 340px; float: left;"></img>
+        <img src= "{{ url_for('static', filename='images/longread2.png') }}" style = "width: 600px; height: 340px; float: left;"></img>
         <br><br><br><br><br><br><br><br><br><br><br>
         <p style = "text-align: right; vertical-align: middle;">...а затем применили меру энтропии Шеннона, суть которой заключается в том, 
             чтобы измерить разнообразие выборки (в нашем случае, разнообразие её тем), вне зависимости от её размера.</p>
         <br><br><br>
-        <img src= "static/images/longread3.png" style = "width: 630px; height: 440px; float: right;"></img>
+        <img src= "{{ url_for('static', filename='images/longread3.png') }}" style = "width: 630px; height: 440px; float: right;"></img>
         <br><br><br><br><br><br><br>
         <p style = "text-align: left; vertical-align: middle;">Более того, если разделить темы по общему смыслу на пять категорий (макро-тем), можно заметить, что с течением времени люди перестали делиться новостями с помощью телеграмм.</p>
         <br><br><br><br><br><br><br>
@@ -42,7 +42,7 @@
         <h3 id="hyp2" style="text-align: center;">Вторая гипотеза</h3>
         <br>
         <p style="text-align: center">Однако наше другое предположение о том, что когда случалось какое-либо историческое событие,<br>телеграммы отправлялись чаще, не оправдалось.</p>
-        <img class="d-block mx-auto mb-4" src="static/images/longread4.png" alt="" width="800" height="440">
+        <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/longread4.png') }}" alt="" width="800" height="440">
         <p>В качестве ключевых исторических моментов мы выбрали даты Октябрьской революции (1917), Великой Отечественной войны (1941-1945), 
             полёта Гагарина в космос (1961) и распад Советского Союза (1991); однако мы не выявили какой-либо корреляции реальных исторических прецедентов с частотностью отправки телеграмм.</p>
         <hr>
@@ -52,11 +52,11 @@
             что имена общественных и политических деятелей могут упоминаться как в официальной, так и в личной переписке, и нередко это может быть связано со смертью деятеля.</p>
         <p>Так, например, мы сделали сетевой анализ взаимодействий и упоминаний Иосифа Виссарионовича Сталина в период с 1919 по 
             1950 год по мере того, как нарастал градус политических репрессий и увеличивался список “врагов народа”.
-        <img src= "static/images/longread5.png" style = "width: 570px; height: 400px; float: right;"></img>
+        <img src= "{{ url_for('static', filename='images/longread5.png') }}" style = "width: 570px; height: 400px; float: right;"></img>
         <br><br><br><br><br><br>
         <p>Из этого анализа мы выяснили, что имена Сталина и Ленина часто упоминаются вместе как синонимы или даже как символы советской власти в целом. Например, когда человека поздравляют с 
             получением награды, ему желают трудиться дальше и продолжать дело “великих Ленина и Сталина”.</p>
-        <img src= "static/images/longread6.png" style = "width: 600px; height: 400px; float: left;"></img>
+        <img src= "{{ url_for('static', filename='images/longread6.png') }}" style = "width: 600px; height: 400px; float: left;"></img>
         <br><br><br><br><br><br><br>
         <div class="container" id="legend" style="align-content: space-around; margin-top: 120px;">
             <div class ="longread-rightbox">
@@ -69,7 +69,7 @@
                 <img src = "images/legend-circle3.png" width="20px" height= "20px" style = "margin-right: 20px; margin-left: 120px;">Упоминаемые персоналии</img>
             </div>
         </div>
-        <img src= "static/images/longread7.png" style="width: 600px; height: 400px; float: right;"></img>
+        <img src= "{{ url_for('static', filename='images/longread7.png') }}" style="width: 600px; height: 400px; float: right;"></img>
         <br><br><br><br><br><br><br><br><br><br><br>
         <p>Также среди телеграмм, отправленных в 1946 году, есть и телеграмма от 
             Центрального вече народной молодёжи Югославии с выражением соболезнований по поводу смерти Калинина. Как известно из истории, отношения между СССР и 
@@ -80,7 +80,7 @@
         <h3 id="also" style="text-align: center;">Также</h3>
         <br>
         <p style="text-align: center;">Помимо этого, при исследовании датасета мы обнаружили несколько других занятных вещей.</p>
-        <img class="d-block mx-auto mb-4" src="static/images/longread8.png" alt="" width="800" height="440">
+        <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/longread8.png') }}" alt="" width="800" height="440">
         <p>В частности, мы узнали, что, несмотря на официальную реформу грамматики в 1917 году, в личной переписке дореволюционной орфографией продолжали пользоваться до тридцатых годов двадцатого века.</p>
         <p>Остальные результаты нашего исследования можно найти на нашем <a href="https://github.com/marinanastas/telegrams">Гитхабе</a>, а полный текст исследования можно прочитать по ссылке ниже.</p>
         
