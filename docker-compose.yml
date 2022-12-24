@@ -7,6 +7,8 @@ services:
       MONGODB_USERNAME: flaskuser
       MONGODB_PASSWORD: your_mongodb_password
       MONGODB_HOSTNAME: mongodb
+      MONGODB_PROTOCOL: mongodb
+      MONGODB_PORT: 27017
     build:
       dockerfile: ./Dockerfile
       context: .
