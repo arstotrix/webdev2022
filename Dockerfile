@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./src .
 
-CMD gunicorn -b 0.0.0.0:5000 main:app
+CMD gunicorn -b 0.0.0.0:5000 --access-logfile - --error-logfile - main:app
