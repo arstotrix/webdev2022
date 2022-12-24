@@ -22,12 +22,12 @@ def telegrams():
     return render_template('telegrams.html')
 
 
-@app.route('/longread', methods=['GET'])
+@app.route('/longread')
 def longread():
     return render_template('longread.html')
 
 
-@app.route('/thank-you', methods=['GET'])
+@app.route('/thank-you')
 def thankyou():
     return render_template('thankyou.html')
 
