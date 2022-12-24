@@ -42,5 +42,27 @@ def add():
         return render_template('add.html')
 
 
+@app.route('/user-data', methods=['POST'])
+def add_user_data():
+    data = request.get_json(force=True)
+    print(data)
+    db.user_data.insert_one(data)
+    return jsonify(message='user data saved'), 201
+
+
+@app.route('/user-data', methods=['GET'])
+def get_user_data():
+    data = [
+        {
+            "username": user.get("username"),
+            "picture_link": user.get("picture_link"),
+            "volunteer": user.get("volunteer"),
+            "contact_info": user.get("contact_info"),
+        }
+        for user in db.user_data.find()
+    ]
+    return jsonify(data), 200
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
