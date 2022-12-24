@@ -13,7 +13,8 @@
     <div class="py-5 text-center">
 
 
-        <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/postal.jpg') }}" alt="" width="800" height="440">
+        <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/postal.jpg') }}" alt="" width="800"
+            height="440">
 
         <h2>Поделитесь своей телеграммой</h2>
 
@@ -23,12 +24,13 @@
         </p>
     </div>
 
-    <form method="post">
+    <form action="{{ url_for('add_user_data') }}" method="post" id="userDataForm">
 
         <div class="mb-3">
             <label for="username">Представьтесь, пожалуйста </label>
             <div class="input-group">
-                <input type="text" class="form-control" id="username" placeholder="Имя, фамилия (по желанию)" name="username" required>
+                <input type="text" class="form-control" id="username" placeholder="Имя, фамилия (по желанию)"
+                    name="username" required>
                 <div class="invalid-feedback" style="width: 100%;">Это поле обязательно.</div>
             </div>
         </div>
@@ -78,7 +80,8 @@
 
         <div class="custom-control custom-checkbox">
 
-            <input type="checkbox" class="custom-control-input" id="privacy-policy" onchange="document.getElementById('sendOnSubmit').disabled = !this.checked;">
+            <input type="checkbox" class="custom-control-input" id="privacy-policy"
+                onchange="document.getElementById('sendOnSubmit').disabled = !this.checked;">
 
             <label class="custom-control-label" for="privacy-policy">
                 Я согласен(-на) на обработку и хранение предоставленных мной данных
@@ -94,5 +97,63 @@
     </form>
 
 </div>
+
+<script>
+    let userDataForm = document.getElementById("userDataForm");
+    //Define the event handler for the form when it's submitted
+    userDataForm.addEventListener("submit", async (e) => {
+        //Prevent browser default behavior
+        e.preventDefault();
+
+        //Get the entire form fields
+        let form = e.currentTarget;
+
+        //Get URL for api endpoint
+        let url = form.action;
+
+        try {
+            //Form field instance
+            let formData = new FormData(form);
+            //Call the `postFormFieldsJson()` function
+            let responseData = await postFormFieldsAsJson({ url, formData });
+            location.assign("{{ url_for('thankyou') }}");
+        } catch (error) {
+            // Handle the error here.
+            console.error(`An has occured ${error}`);
+        }
+    })
+    async function postFormFieldsAsJson({ url, formData }) {
+            //Create an object from the form data entries
+            let formDataObject = Object.fromEntries(formData.entries());
+            // Format the plain form data as JSON
+            let formDataJsonString = JSON.stringify(formDataObject);
+            console.log(formDataJsonString)
+
+            //Set the fetch options (headers, body)
+            let fetchOptions = {
+                //HTTP method set to POST.
+                method: "POST",
+                //Set the headers that specify you're sending a JSON body request and accepting JSON response
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                // POST request body as JSON string.
+                body: formDataJsonString,
+            };
+
+            //Get the response body as JSON.
+            //If the response was not OK, throw an error.
+            let res = await fetch(url, fetchOptions);
+
+            //If the response is not ok throw an error (for debugging)
+            if (!res.ok) {
+                let error = await res.text();
+                throw new Error(error);
+            }
+            //If the response was OK, return the response body.
+            return res.json();
+        }
+</script>
 
 {% endblock %}
