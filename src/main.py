@@ -1,6 +1,15 @@
-from flask import Flask, render_template, Request, request, redirect, Response
+from flask import Flask, render_template, Request, request, redirect, Response, jsonify
+from flask_pymongo import PyMongo
+
+from config import Config
+
 
 app = Flask(__name__)
+app.config.from_object(Config)
+
+
+mongo = PyMongo(app=app)
+db = mongo.db
 
 
 @app.route('/')
@@ -13,12 +22,12 @@ def telegrams():
     return render_template('telegrams.html')
 
 
-@app.route('/longread', methods=['GET'])
+@app.route('/longread')
 def longread():
     return render_template('longread.html')
 
 
-@app.route('/thank-you', methods=['GET'])
+@app.route('/thank-you')
 def thankyou():
     return render_template('thankyou.html')
 
@@ -31,6 +40,28 @@ def add():
         return redirect("/thank-you")
     else:
         return render_template('add.html')
+
+
+@app.route('/user-data', methods=['POST'])
+def add_user_data():
+    data = request.get_json(force=True)
+    print(data)
+    db.user_data.insert_one(data)
+    return jsonify(message='user data saved'), 201
+
+
+@app.route('/user-data', methods=['GET'])
+def get_user_data():
+    data = [
+        {
+            "username": user.get("username"),
+            "picture_link": user.get("picture_link"),
+            "volunteer": user.get("volunteer"),
+            "contact_info": user.get("contact_info"),
+        }
+        for user in db.user_data.find()
+    ]
+    return jsonify(data), 200
 
 
 if __name__ == "__main__":
