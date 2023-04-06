@@ -2,6 +2,10 @@ from flask import Flask, render_template, Request, request, redirect, Response, 
 from flask_pymongo import PyMongo
 
 from config import Config
+from pymongo import MongoClient
+
+client = MongoClient("mongodb+srv://cluster0.sqm88.mongodb.net/test")
+db = client.get_database('mydatabase')
 
 
 app = Flask(__name__)
