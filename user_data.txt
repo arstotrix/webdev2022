@@ -1,3 +1,0 @@
-{'username': 'jhdgkjk', 'picture_link': 'fghfkjgh', 'volunteer': 'true', 'contact_info': 'hglk'}
-{'username': 'jhdgkjk', 'picture_link': 'fghfkjgh', 'volunteer': 'true', 'contact_info': 'hglk'}
-{'username': 'fgd', 'picture_link': 'dfg', 'volunteer': 'true', 'contact_info': 'dfg'}
